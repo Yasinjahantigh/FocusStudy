@@ -29,6 +29,18 @@ Grab the latest installer from the [Releases](../../releases) page:
 
 > The app is not code-signed yet, so Windows SmartScreen may show an "Unknown publisher" warning.
 
+## AI Configuration
+
+The AI features (environment audit, focus-lock exceptions, review) are optional and need one API key you provide yourself:
+
+1. Get a free API key from **Google AI Studio**: https://aistudio.google.com/apikey
+2. In FocusStudy: **Settings** → paste the key. Defaults work out of the box:
+   - Base URL: `https://generativelanguage.googleapis.com/v1beta`
+   - Model: `gemma-4-31b-it`
+3. Optionally enable **AI Web Search** for up-to-date answers.
+
+Any OpenAI-compatible endpoint works too (LM Studio, Ollama, local Gemma builds…) — just set its Base URL. The key is stored encrypted via the Windows OS keychain when available.
+
 ## Browser Bridge (optional)
 
 The bundled Chrome/Edge extension tells FocusStudy the real active browser tab instead of just the window title.
@@ -147,6 +159,18 @@ FocusStudy یک اپلیکیشن دسکتاپ ویندوز برای جلسات �
 - `FocusStudy-BrowserBridge-vx.y.z.zip` — افزونه مرورگر (اختیاری)
 
 > برنامه هنوز امضای دیجیتال ندارد؛ ممکن است ویندوز هشدار «ناشر ناشناس» نشان دهد.
+
+## تنظیم هوش مصنوعی
+
+قابلیت‌های AI (تحلیل محیط، استثنای قفل تمرکز، بررسی برنامه‌ها) اختیاری‌اند و فقط به یک کلید API نیاز دارند که خودتان می‌سازید:
+
+1. کلید رایگان از **Google AI Studio** بگیرید: https://aistudio.google.com/apikey
+2. در FocusStudy بخش **تنظیمات**: کلید را وارد کنید. مقادیر پیش‌فرض آماده‌اند:
+   - Base URL: `https://generativelanguage.googleapis.com/v1beta`
+   - مدل: `gemma-4-31b-it`
+3. در صورت نیاز، **جستجوی وب AI** را فعال کنید.
+
+هر endpoint سازگار با OpenAI (مثل LM Studio، Ollama، مدل‌های محلی Gemma) هم جواب می‌دهد — فقط Base URL را تغییر دهید. کلید API در صورت امکان با رمزنگاری ویندوز ذخیره می‌شود.
 
 ## پل مرورگر (اختیاری)
 
