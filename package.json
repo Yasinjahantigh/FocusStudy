@@ -1,0 +1,112 @@
+{
+  "name": "focus-study",
+  "version": "1.1.1",
+  "description": "Windows desktop application for focused study, laptop usage monitoring, ambient audio, and productivity tracking.",
+  "main": "dist/main/index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "node --test \"tests/**/*.test.ts\"",
+    "typecheck": "tsc --noEmit",
+    "ext:zip": "powershell -NoProfile -ExecutionPolicy Bypass -Command \"New-Item -ItemType Directory -Force -Path release | Out-Null; Compress-Archive -Force -Path 'browser-extension' -DestinationPath ('release\\FocusStudy-BrowserBridge-v' + $env:npm_package_version + '.zip')\"",
+    "package": "npm run build && electron-builder --win --publish never",
+    "dist": "npm run build && electron-builder --win"
+  },
+  "keywords": [
+    "electron",
+    "react",
+    "typescript",
+    "productivity",
+    "pomodoro",
+    "study",
+    "focus"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@google/genai": "^2.17.0",
+    "clsx": "^2.1.1",
+    "i18next": "^26.3.6",
+    "koffi": "^2.8.8",
+    "lucide-react": "^0.427.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^17.0.11",
+    "recharts": "^2.12.7",
+    "tailwind-merge": "^2.5.2",
+    "zustand": "^4.5.4"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.13",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.2.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
+    "electron": "^31.3.1",
+    "electron-builder": "^25.0.0",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.0",
+    "vite-plugin-electron": "^0.28.7",
+    "vite-plugin-electron-renderer": "^0.14.5"
+  },
+  "build": {
+    "appId": "com.focusstudy.app",
+    "productName": "FocusStudy",
+    "copyright": "Copyright © 2026 FocusStudy",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "browser-extension",
+        "to": "browser-extension"
+      },
+      {
+        "from": "build/bridge-entry.js",
+        "to": "bridge-entry.js"
+      }
+    ],
+    "extraMetadata": {
+      "main": "dist/main/index.js"
+    },
+    "afterPack": "build/afterPack.js",
+    "asar": true,
+    "asarUnpack": [
+      "node_modules/koffi/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "executableName": "FocusStudy"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "FocusStudy",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "installerHeaderIcon": "build/icon.ico",
+      "license": "LICENSE",
+      "include": "build/installer.nsh"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background rounded rectangle -->
+  <rect width="512" height="512" rx="96" fill="#0f172a"/>
+  <!-- Gradient timer circle -->
+  <circle cx="256" cy="256" r="180" stroke="url(#grad)" stroke-width="24" fill="none" stroke-linecap="round">
+    <animateTransform attributeName="transform" type="rotate" from="-90 256 256" to="270 256 256" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+  <!-- Sparkle icon -->
+  <g transform="translate(256, 256)">
+    <polygon points="0,-16 3,-4 13,-4 5,3 8,13 0,7 -8,13 -5,3 -13,-4 -3,-4" fill="#10B981"/>
+    <polygon points="60,60 63,50 73,50 65,57 68,67 60,61 52,67 55,57 47,50 57,50" fill="#06B6D4" opacity="0.8"/>
+    <polygon points="-60,-60 -57,-70 -47,-70 -55,-63 -52,-53 -60,-59 -68,-53 -65,-63 -73,-70 -63,-70" fill="#10B981" opacity="0.8"/>
+  </g>
+  <!-- Small accent dots -->
+  <circle cx="120" cy="120" r="8" fill="#10B981" opacity="0.6"/>
+  <circle cx="392" cy="392" r="6" fill="#06B6D4" opacity="0.6"/>
+  <circle cx="120" cy="392" r="5" fill="#10B981" opacity="0.5"/>
+  <circle cx="392" cy="120" r="4" fill="#06B6D4" opacity="0.5"/>
+</svg>

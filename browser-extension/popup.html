@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    body { width: 340px; margin: 0; padding: 16px; background: #0f172a; color: #e2e8f0; font-family: system-ui, sans-serif; font-size: 12px; }
+    html[dir="rtl"] body { font-family: system-ui, "Segoe UI", Tahoma, sans-serif; }
+    h1 { font-size: 14px; margin: 0 0 4px; color: #34d399; }
+    p { margin: 4px 0; color: #94a3b8; line-height: 1.6; }
+    .id-box { display: flex; gap: 6px; align-items: center; margin: 8px 0; }
+    .id-box input { flex: 1; background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #e2e8f0; font-size: 11px; padding: 6px 8px; outline: none; direction: ltr; }
+    button { background: #059669; color: #fff; border: none; border-radius: 6px; padding: 6px 10px; font-size: 11px; cursor: pointer; }
+    button:active { opacity: 0.8; }
+    button.secondary { background: #334155; }
+    .status { padding: 8px; border-radius: 6px; margin-top: 8px; font-weight: 600; text-align: center; line-height: 1.5; word-break: break-word; }
+    .ok { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .fail { background: rgba(244, 63, 94, 0.15); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.3); }
+    ol { margin: 6px 0 0; padding-inline-start: 16px; color: #94a3b8; line-height: 1.6; }
+    .hint { font-size: 10px; color: #64748b; margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <h1>FocusStudy Bridge</h1>
+  <p data-i18n="privacy"></p>
+
+  <div class="id-box">
+    <input id="ext-id" readonly value="" />
+    <button id="copy-id" data-i18n="copy"></button>
+  </div>
+
+  <button id="test-host" data-i18n="test"></button>
+  <div id="status" class="status" style="display:none"></div>
+
+  <ol>
+    <li data-i18n="step1"></li>
+    <li data-i18n="step2"></li>
+    <li data-i18n="step3"></li>
+  </ol>
+  <p class="hint" id="log-hint" data-i18n="logHint"></p>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "FocusStudy Browser Bridge",
+  "version": "1.1.1",
+  "description": "Optional browser tab metadata bridge for FocusStudy (tab titles + hostnames only).",
+  "permissions": ["tabs", "nativeMessaging"],
+  "background": { "service_worker": "background.js" },
+  "action": {
+    "default_title": "FocusStudy",
+    "default_popup": "popup.html"
+  }
+}

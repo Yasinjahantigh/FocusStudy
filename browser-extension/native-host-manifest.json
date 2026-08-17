@@ -1,0 +1,9 @@
+{
+  "name": "com.focusstudy.browser_bridge",
+  "description": "FocusStudy optional browser metadata bridge",
+  "path": "<INSTALL_DIR>\\FocusStudyBrowserBridge.exe",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://<EXTENSION_ID>/"
+  ]
+}

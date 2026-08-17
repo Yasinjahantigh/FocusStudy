@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+release/
+
+# User runtime data (settings, session history)
+data/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Test coverage (if using)
+coverage/
+
+# Cache
+.cache/
+.parcel-cache/
+.eslintcache
+
+# Electron builder
+electron-builder.yml
+electron-builder.yaml
